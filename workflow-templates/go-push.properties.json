@@ -1,7 +1,7 @@
 {
     "name": "Go Push Workflow",
     "description": "Lint, test, and build Go.",
-    "iconName": "server",
+    "iconName": "Go-Logo_Blue",
     "categories": [
         "Go"
     ],
