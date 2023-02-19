@@ -11,22 +11,8 @@ jobs:
       fail-fast: true
 
       matrix:
-        goos: [darwin, freebsd, linux, netbsd, openbsd, windows]
+        goos: [linux]
         goarch: [amd64]
-
-        include:
-          - goos: freebsd
-            goarch: arm
-
-          - goos: linux
-            goarch: arm
-          - goos: linux
-            goarch: arm64
-          - goos: linux
-            goarch: ppc64le
-
-          - goos: netbsd
-            goarch: arm
 
     name: Build ${{ matrix.goos }}/${{ matrix.goarch }}
 
@@ -38,7 +24,9 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Run Go 1.15 pipeline
-        uses: ebarkie/actions/go/1.15@v1
+      - name: Run Go 1.20 pipeline
+        uses: ebarkie/actions/go/1.20@master
+        with:
+          build: true
